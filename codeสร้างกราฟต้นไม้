@@ -13,8 +13,8 @@ features = student
 target = student['BRANCH']
 
 # แปลง target เป็นตัวเลขหากเป็นข้อความ
-if target.dtype == 'object':
-    target = le.fit_transform(target)
+le = LabelEncoder()
+target = le.fit_transform(target)
 
 # วนลูปเพื่อแปลงทุกคอลัมน์ที่เป็นข้อความใน features
 for column in features.columns:
